@@ -1,12 +1,14 @@
 body {
     background-color: #cccccc5e;
     font-family: 'Roboto', sans-serif;
+    width: 100%;
 }
 
 main {
     background-color: #fff;
     width: 500px;
     margin: 0 auto;
+    margin-top: 5%;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -26,6 +28,7 @@ h2 {
 
 .container {
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -33,11 +36,11 @@ h2 {
 
 .color-display {
     background-color: hsl(0, 59%, 41%);
-    width: 20em;
+    width: 50%;
     height: 200px;
     margin: 0 auto;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     transition: all 0.5s ease;
     &:hover {
         transform: scale(1.1);
@@ -48,14 +51,15 @@ h2 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    width: 100%;
 }
 
 .btn-opt {
     background-color: hsl(0, 59%, 41%);
-    width: 15em;
+    width: 100%;
     height: 150px;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     border-style: none;
     transition: all 0.5s ease;
     &:hover {
@@ -67,19 +71,24 @@ h2 {
 }
 
 .reset {
-    background-image: linear-gradient(#002df8, #ccc);
+    background-image: linear-gradient(#002df8, #979797);
     color: #fff;
-    font-size: 15px;
-    width: 5em;
+    font-size: 1em;
+    width: 20%;
     padding: 10px;
     border-radius: 5px;
     border-style: none;
     margin: 20px auto;
     cursor: pointer;
     transition: all 0.5s ease;
-    &:hover {
+    &:active {
         transform: scale(1.05);
-        background-color: sandybrown;
         box-shadow: 2px 5px 5px #9e9c9c;
+    }
+}
+
+@media (max-width: 450px) {
+    main {
+        width: 100%;
     }
 }
