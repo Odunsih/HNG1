@@ -27,3 +27,7 @@ function color() {
   btn6.style.backgroundColor = `hsl(${h}, ${s}%, ${l}%)`;
 }
 color();
+
+btn1.addEventListener("click", () => {
+  color();
+});
