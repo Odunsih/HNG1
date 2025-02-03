@@ -56,28 +56,48 @@ function color() {
   btn6.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[5].ligthnes}%)`;
 }
 let score = 0;
+
+let reset = document.getElementById("reset");
+let scoreResult = document.getElementById("score");
+
+function handleButtonClick(e, main) {
+  let clickedBtn = e.target.style.backgroundColor;
+  let scoreResult = document.getElementById("score");
+  let message = document.getElementById("message");
+
+  if (main === clickedBtn) {
+    color();
+    score++;
+    scoreResult.innerText = `Score: ${score}`;
+    message.innerHTML = `<h2>Correct✅</h2>`;
+    message.classList.add("correct");
+    setTimeout(() => {
+      message.innerHTML = "";
+      message.classList.remove("correct");
+    }, 2000);
+  } else {
+    message.innerHTML = `<h2>Wrong❌</h2>`;
+    message.classList.add("wrong");
+    setTimeout(() => {
+      message.innerHTML = "";
+      message.classList.remove("wrong");
+    }, 2000);
+  }
+  console.log(e.target);
+  console.log(main);
+}
+
 function getColor(main) {
-  btns.forEach((btn, i) => {
-    btn.addEventListener(
-      "click",
-      (e) => {
-        let clickeBtn = e.target.style.backgroundColor;
-        let scoreResult = document.getElementById("score");
-        if (main === clickeBtn) {
-          color();
-          alert("correct");
-          score++;
-          scoreResult.innerText = `Score: ${score}`;
-        } else {
-          alert("wrong");
-        }
-        console.log(i + 1, e.target);
-        console.log(main);
-      },
-      { once: true },
-      { once: false }
-    );
+  btns.forEach((btn) => {
+    btn.removeEventListener("click", btn.clickHandler); // Remove previous listener
+    btn.clickHandler = (e) => handleButtonClick(e, main); // Attach new named function
+    btn.addEventListener("click", btn.clickHandler);
   });
 }
 
 color();
+reset.addEventListener("click", () => {
+  color();
+  score = 0;
+  scoreResult.innerText = `Score: ${score}`;
+});
