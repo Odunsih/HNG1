@@ -14,11 +14,11 @@ function hue() {
 }
 h = hue();
 function shuff() {
-  let l1 = Math.random() * 358;
-  let l2 = Math.random() * 358;
-  let l3 = Math.random() * 358;
-  let l4 = Math.random() * 358;
-  let l5 = Math.random() * 358;
+  let l1 = Math.random() * 360;
+  let l2 = Math.random() * 360;
+  let l3 = Math.random() * 360;
+  let l4 = Math.random() * 360;
+  let l5 = Math.random() * 360;
   const colors = [
     {
       ligthnes: h,
