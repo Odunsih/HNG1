@@ -9,7 +9,7 @@ let btn6 = document.getElementById("btn6");
 let btns = [btn1, btn2, btn3, btn4, btn5, btn6];
 let shuffledColor = 0;
 function hue() {
-  let h = Math.random() * 360;
+  let h = Math.round(Math.random() * 360);
   return h;
 }
 h = hue();
