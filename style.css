@@ -113,4 +113,12 @@ h2 {
     main {
         width: 100%;
     }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .reset {
+        font-size: .7em;
+    }
 }
