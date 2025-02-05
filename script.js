@@ -121,7 +121,7 @@ function scores() {
     btn5.classList.remove("btnDisable");
     btn6.classList.add("btnP");
     btn6.classList.remove("btnDisable");
-  }, 30000);
+  }, 5000);
   score = 0;
   scoreResult.innerText = `Score: ${score}`;
   message.innerHTML = `<h2>Wrong❌</h2>`;
