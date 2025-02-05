@@ -80,18 +80,57 @@ function handleButtonClick(e, main) {
       message.classList.remove("correct");
     }, 2000);
   } else {
-    // score = 0;
-    // scoreResult.innerText = `Score: ${score}`;
-    message.innerHTML = `<h2>Wrong❌</h2>`;
-    message.classList.add("wrong");
-    setTimeout(() => {
-      message.innerHTML = "";
-      message.classList.remove("wrong");
-      //   color();
-    }, 2000);
+    scores();
   }
   console.log(e.target);
   console.log(main);
+}
+
+function scores() {
+  let result = document.getElementById("result");
+  let body = document.getElementById("body");
+  btn1.classList.remove("btnP");
+  btn1.classList.add("btnDisable");
+  btn2.classList.remove("btnP");
+  btn2.classList.add("btnDisable");
+  btn3.classList.remove("btnP");
+  btn3.classList.add("btnDisable");
+  btn4.classList.remove("btnP");
+  btn4.classList.add("btnDisable");
+  btn5.classList.remove("btnP");
+  btn5.classList.add("btnDisable");
+  btn6.classList.remove("btnP");
+  btn6.classList.add("btnDisable");
+  body.classList.add("bdy");
+  result.classList.remove("result");
+  result.classList.add("finalResult");
+  result.innerHTML = `<h2>Your score is ${score}</h2>`;
+  setTimeout(() => {
+    result.innerHTML = "";
+    result.classList.remove("finalResult");
+    body.classList.remove("bdy");
+    btn1.classList.add("btnP");
+    btn1.classList.remove("btnDisable");
+    btn2.classList.add("btnP");
+    btn2.classList.remove("btnDisable");
+    btn3.classList.add("btnP");
+    btn3.classList.remove("btnDisable");
+    btn4.classList.add("btnP");
+    btn4.classList.remove("btnDisable");
+    btn5.classList.add("btnP");
+    btn5.classList.remove("btnDisable");
+    btn6.classList.add("btnP");
+    btn6.classList.remove("btnDisable");
+  }, 30000);
+  score = 0;
+  scoreResult.innerText = `Score: ${score}`;
+  message.innerHTML = `<h2>Wrong❌</h2>`;
+  message.classList.add("wrong");
+  setTimeout(() => {
+    message.innerHTML = "";
+    message.classList.remove("wrong");
+    color();
+  }, 3000);
 }
 
 function getColor(main) {
