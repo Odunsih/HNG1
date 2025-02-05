@@ -32,7 +32,3 @@ This is a simple color guessing game where the player has to guess the correct c
 1. Clone the repository.
 2. Open the project in Visual Studio Code.
 3. Open `index.html` with Live Server to start the game.
-
-## License
-
-This project is licensed under the MIT License.
