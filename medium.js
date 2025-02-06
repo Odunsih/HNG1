@@ -9,16 +9,16 @@ let btn6 = document.getElementById("btn6");
 let btns = [btn1, btn2, btn3, btn4, btn5, btn6];
 let shuffledColor = 0;
 function hue() {
-  let l = Math.floor(Math.random() * (60 - 40 + 1)) + 40;
+  let l = Math.random() * 100;
   return l;
 }
 l = hue();
 function shuff() {
-  let l1 = Math.floor(Math.random() * (60 - 40 + 1)) + 40;
-  let l2 = Math.floor(Math.random() * (60 - 40 + 1)) + 40;
-  let l3 = Math.floor(Math.random() * (60 - 40 + 1)) + 40;
-  let l4 = Math.floor(Math.random() * (60 - 40 + 1)) + 40;
-  let l5 = Math.floor(Math.random() * (60 - 40 + 1)) + 40;
+  let l1 = Math.random() * 100;
+  let l2 = Math.random() * 100;
+  let l3 = Math.random() * 100;
+  let l4 = Math.random() * 100;
+  let l5 = Math.random() * 100;
   const colors = [
     {
       ligthnes: l,
