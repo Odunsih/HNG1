@@ -8,10 +8,10 @@ This is a simple color guessing game where the player has to guess the correct c
 
 ## How to Play
 
-1. The game will display a color in the main color box.
-2. Choose the correct color from the options below.
+1. The game will display a color in the main color box which is the target color.
+2. Choose the correct color from the options below the main color box.
 3. If you guess correctly, your score will increase, and a new color will be displayed.
-4. If you guess incorrectly, the game will display your final score and reset.
+4. If you guess incorrectly, the game will end and display your final score and reset.
 
 ## Features
 
@@ -22,7 +22,7 @@ This is a simple color guessing game where the player has to guess the correct c
 
 ## Files
 
-- `index.html`: The HTML file that the selection of the difficuly level.
+- `index.html`: The HTML file that contain the selection of the difficuly level.
 - `easy.html`: The HTML file for the easy level.
 - `medium.html`: The HTML file for the medium level.
 - `hard.html`: The HTML file for the hard level.
@@ -33,6 +33,10 @@ This is a simple color guessing game where the player has to guess the correct c
 - `medium.js`: The JavaScript file that contains the game logic for the medium level.
 - `hard.js`: The JavaScript file that contains the game logic for the hard level.
 - `.vscode/settings.json`: Configuration for the Live Server extension.
+
+## Live Site
+
+You can play the game [here](https://color-guess-game-five.vercel.app/).
 
 ## Setup
 
