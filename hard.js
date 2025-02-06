@@ -9,19 +9,19 @@ let btn6 = document.getElementById("btn6");
 let btns = [btn1, btn2, btn3, btn4, btn5, btn6];
 let shuffledColor = 0;
 function hue() {
-  let h = Math.round(Math.random() * 360);
-  return h;
+  let l = 50;
+  return l;
 }
-h = hue();
+l = hue();
 function shuff() {
-  let l1 = Math.random() * 360;
-  let l2 = Math.random() * 360;
-  let l3 = Math.random() * 360;
-  let l4 = Math.random() * 360;
-  let l5 = Math.random() * 360;
+  let l1 = Math.random() * 100;
+  let l2 = Math.random() * 100;
+  let l3 = Math.random() * 100;
+  let l4 = Math.random() * 100;
+  let l5 = Math.random() * 100;
   const colors = [
     {
-      ligthnes: h,
+      ligthnes: l,
     },
     {
       ligthnes: l1,
@@ -44,19 +44,19 @@ function shuff() {
   return shuffledColor;
 }
 function color() {
-  let s = 100;
-  let l = 50;
+  let h = Math.round(Math.random() * 360);
+  let s = Math.random() * 100;
   shuffledColor = shuff();
   mainColor.style.backgroundColor = `hsl(${h}, ${s}%, ${l}%)`;
   let main = mainColor.style.backgroundColor;
   getColor(main);
   console.log(mainColor.style.backgroundColor);
-  btn1.style.backgroundColor = `hsl(${shuffledColor[0].ligthnes}, ${s}%, ${l}%)`;
-  btn2.style.backgroundColor = `hsl(${shuffledColor[1].ligthnes}, ${s}%, ${l}%)`;
-  btn3.style.backgroundColor = `hsl(${shuffledColor[2].ligthnes}, ${s}%, ${l}%)`;
-  btn4.style.backgroundColor = `hsl(${shuffledColor[3].ligthnes}, ${s}%, ${l}%)`;
-  btn5.style.backgroundColor = `hsl(${shuffledColor[4].ligthnes}, ${s}%, ${l}%)`;
-  btn6.style.backgroundColor = `hsl(${shuffledColor[5].ligthnes}, ${s}%, ${l}%)`;
+  btn1.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[0].ligthnes}%)`;
+  btn2.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[1].ligthnes}%)`;
+  btn3.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[2].ligthnes}%)`;
+  btn4.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[3].ligthnes}%)`;
+  btn5.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[4].ligthnes}%)`;
+  btn6.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[5].ligthnes}%)`;
 }
 let score = 0;
 
