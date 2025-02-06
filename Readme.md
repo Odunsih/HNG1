@@ -22,9 +22,16 @@ This is a simple color guessing game where the player has to guess the correct c
 
 ## Files
 
-- `index.html`: The main HTML file that contains the structure of the game.
+- `index.html`: The HTML file that the selection of the difficuly level.
+- `easy.html`: The HTML file for the easy level.
+- `medium.html`: The HTML file for the medium level.
+- `hard.html`: The HTML file for the hard level.
+- `select.css`: The CSS file that styles the selection screen.
 - `style.css`: The CSS file that styles the game.
-- `script.js`: The JavaScript file that contains the game logic.
+- `main.js`: The JavaScript file that handles the game level selection.
+- `script.js`: The JavaScript file that contains the game logic for the easy level.
+- `medium.js`: The JavaScript file that contains the game logic for the medium level.
+- `hard.js`: The JavaScript file that contains the game logic for the hard level.
 - `.vscode/settings.json`: Configuration for the Live Server extension.
 
 ## Setup
