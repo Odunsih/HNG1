@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Guessing</title>
+</head>
+<body id="body">
+    <main>
+        <h1 data-testid="score" id="score">Score: 0</h1>
+        <div class="container">
+            <h2 data-testid="gameInstructions">Guess the correct color!</h2>
+            <div class="result" id="result"></div>
+            <div data-testid="colorBox" id="maincolor" class="color-display"></div>
+            <h2>Chose from the options below👇</h2>
+            <div id="option" class="color-options">
+                <button data-testid="colorOption" id="btn1" title="option A" class="btn-opt btnP"></button>
+                <button data-testid="colorOption" id="btn2" title="option B" class="btn-opt btnP"></button>
+                <button data-testid="colorOption" id="btn3" title="option C" class="btn-opt btnP"></button>
+                <button data-testid="colorOption" id="btn4" title="option D" class="btn-opt btnP"></button>
+                <button data-testid="colorOption" id="btn5" title="option E" class="btn-opt btnP"></button>
+                <button data-testid="colorOption" id="btn6" title="option F" class="btn-opt btnP"></button>
+            </div>
+            <div data-testid="gameStatus" id="message"></div>
+            <button data-testid="newGameButton" id="reset" class="reset">New Game</button>
+        </div>
+    </main>
+    <script src="hard.js"></script>
+</body>
+</html>
