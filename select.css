@@ -1,23 +1,3 @@
-/* body {
-    background-color: #cccccc5e;
-    font-family: 'Roboto', sans-serif;
-    width: 100%;
-}
-
-main {
-    background-color: #fff;
-    width: 500px;
-    margin: 0 auto;
-    margin-top: 5%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    box-shadow: 1px 5px 5px #666;
-} */
-
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(100deg, #ff9a9e, #fad0c4);
@@ -39,18 +19,6 @@ body {
     animation: fadeIn 0.6s ease-in-out;
   }
 
-/* select {
-    font-size: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 5px;
-}
-
-select * {
-    &:hover {
-        background-color: red;
-    }
-} */
 
 select {
     width: 220px;
@@ -60,7 +28,7 @@ select {
     font-size: 16px;
     background: white;
     cursor: pointer;
-    appearance: none; /* Removes default dropdown arrow */
+    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"><path fill="%23ff758c" d="M7 10l5 5 5-5z"/></svg>'); 
@@ -81,8 +49,8 @@ select {
   }
 
   select option {
-    background: white; /* Default background */
-    color: #ff3366; /* Text color */
+    background: white;
+    color: #ff3366;
     padding: 10px;
     font-size: 16px;
     transition: background 0.3s, color 0.3s;
@@ -93,28 +61,17 @@ select {
     color: white;
   }
   
-  /* Customizing selected option */
   select option:checked {
     background: #ff758c;
     color: white;
   }
 
-/* button {
-    background-image: linear-gradient(#002df8, #979797);
-    color: #fff;
-    font-size: 1em;
-    width: 20%;
-    padding: 10px;
-    border-radius: 5px;
-    border-style: none;
-    margin: 20px auto;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    &:active {
-        transform: scale(1.05);
-        box-shadow: 2px 5px 5px #9e9c9c;
-    }
-} */
+  .errorSelect {
+    outline: none;
+    border-color: #ff3366;
+    box-shadow: 0px 0px 10px rgba(255, 51, 102, 0.5);
+  }
+
 
 button {
     margin-top: 15px;
@@ -127,12 +84,43 @@ button {
     border-radius: 8px;
     cursor: pointer;
     transition: 0.3s;
-  }
-  
-  button:hover {
+}
+
+button:hover {
     background: #ff3366;
     transform: scale(1.05);
+}
+
+.result {
+    display: none;
+}
+
+.finalResult {
+    background-color: #cccccc5e;
+    position: fixed;
+    z-index: 1;
+    top: 30%;
+    left: 50%;
+    padding: 20px;
+    font-size: 22px;
+    border-radius: 20px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    animation: popupAnim 0.3s ease-out forwards;
+    transition-delay: 0s;
+}
+
+@keyframes popupAnim {
+    0% {
+      transform: translate(-50%, -50%) scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
   }
+
 
 @keyframes fadeIn {
     from {
@@ -152,6 +140,9 @@ button {
     button, select {
         width: 90%;
         margin: 10px auto;
+    }
+    .finalResult {
+        font-size: 18px;
     }
     
 }
