@@ -98,6 +98,9 @@ function startGame() {
   } else if (select.value === "hard") {
     // updateLoader("hard");
     window.location.href = "hard.html";
+  } else if (select.value === "pro") {
+    // updateLoader("hard");
+    window.location.href = "construction.html";
   } else {
     error();
   }
