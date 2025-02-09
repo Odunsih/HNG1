@@ -14,6 +14,7 @@ let timer = 5;
 timeLeft.innerHTML = `Time: ${timer}s`;
 
 function timing() {
+  // timer = 5;
   const time = setInterval(() => {
     if (timer > 0) {
       timer--;
@@ -22,7 +23,7 @@ function timing() {
     } else {
       clearInterval(time);
       console.log("time up");
-      scores();
+      timeUp();
     }
   }, 1000);
 }
@@ -70,7 +71,7 @@ function color() {
   mainColor.style.backgroundColor = `hsl(${h}, ${s}%, ${l}%)`;
   let main = mainColor.style.backgroundColor;
   getColor(main);
-  console.log(mainColor.style.backgroundColor);
+  // console.log(mainColor.style.backgroundColor);
   btn1.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[0].ligthnes}%)`;
   btn2.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[1].ligthnes}%)`;
   btn3.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[2].ligthnes}%)`;
@@ -78,6 +79,7 @@ function color() {
   btn5.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[4].ligthnes}%)`;
   btn6.style.backgroundColor = `hsl(${h}, ${s}%, ${shuffledColor[5].ligthnes}%)`;
 }
+
 let score = 0;
 
 let reset = document.getElementById("reset");
@@ -90,6 +92,9 @@ function handleButtonClick(e, main) {
 
   if (main === clickedBtn) {
     color();
+    timer = 5;
+    // timing();
+    timeLeft.innerHTML = `Time: ${timer}s`;
     h = hue();
     score++;
     scoreResult.innerText = `Score: ${score}`;
@@ -97,7 +102,7 @@ function handleButtonClick(e, main) {
     message.classList.add("correct");
     setTimeout(() => {
       message.innerHTML = "";
-      timing();
+      // timing();
 
       message.classList.remove("correct");
     }, 2000);
@@ -143,9 +148,11 @@ function scores() {
     btn5.classList.remove("btnDisable");
     btn6.classList.add("btnP");
     btn6.classList.remove("btnDisable");
+    timer = 5;
+    timeLeft.innerHTML = `Time: ${timer}s`;
   }, 5000);
   score = 0;
-  timer = 5;
+  // timing();
   scoreResult.innerText = `Score: ${score}`;
   message.innerHTML = `<h2>Wrong❌</h2>`;
   message.classList.add("wrong");
@@ -154,6 +161,60 @@ function scores() {
     message.classList.remove("wrong");
     color();
   }, 3000);
+}
+
+function timeUp() {
+  let result = document.getElementById("result");
+  let body = document.getElementById("body");
+  btn1.classList.remove("btnP");
+  btn1.classList.add("btnDisable");
+  btn2.classList.remove("btnP");
+  btn2.classList.add("btnDisable");
+  btn3.classList.remove("btnP");
+  btn3.classList.add("btnDisable");
+  btn4.classList.remove("btnP");
+  btn4.classList.add("btnDisable");
+  btn5.classList.remove("btnP");
+  btn5.classList.add("btnDisable");
+  btn6.classList.remove("btnP");
+  btn6.classList.add("btnDisable");
+  body.classList.add("bdy");
+  result.classList.remove("result");
+  result.classList.add("finalResult");
+  result.innerHTML = `<h2>Your score is ${score}</h2>`;
+  setTimeout(() => {
+    result.innerHTML = "";
+    result.classList.remove("finalResult");
+    body.classList.remove("bdy");
+    btn1.classList.add("btnP");
+    btn1.classList.remove("btnDisable");
+    btn2.classList.add("btnP");
+    btn2.classList.remove("btnDisable");
+    btn3.classList.add("btnP");
+    btn3.classList.remove("btnDisable");
+    btn4.classList.add("btnP");
+    btn4.classList.remove("btnDisable");
+    btn5.classList.add("btnP");
+    btn5.classList.remove("btnDisable");
+    btn6.classList.add("btnP");
+    btn6.classList.remove("btnDisable");
+    timer = 5;
+    timing();
+    timeLeft.innerHTML = `Time: ${timer}s`;
+  }, 5000);
+  score = 0;
+  timer = 5;
+  timeLeft.innerHTML = `Time: ${timer}s`;
+
+  // timing();
+  scoreResult.innerText = `Score: ${score}`;
+  message.innerHTML = `<h2>Times Up</h2>`;
+  message.classList.add("wrong");
+  setTimeout(() => {
+    message.innerHTML = "";
+    message.classList.remove("wrong");
+    color();
+  }, 4000);
 }
 
 function getColor(main) {
@@ -166,9 +227,10 @@ function getColor(main) {
 
 color();
 reset.addEventListener("click", () => {
-  timing();
   color();
   score = 0;
   timer = 5;
+  // timing();
+  timeLeft.innerHTML = `Time: ${timer}s`;
   scoreResult.innerText = `Score: ${score}`;
 });
